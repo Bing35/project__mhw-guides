@@ -1,0 +1,18 @@
+GET https://mhw-db.com/monsters
+
+###
+
+GET https://mhw-db.com/monsters?q={"name": {"$like": "%rath%"}}
+
+###
+
+# gives error
+GET https://mhw-db.com/monsters?q={"name": {"$like": "%aa%"}}
+
+
+###
+
+GET https://mhw-db.com/monsters/36
+
+
+###
