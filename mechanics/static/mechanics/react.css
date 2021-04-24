@@ -2,4 +2,62 @@
   margin: 1em;
 }
 
+nav {
+  font-size: 1.2rem;
+  position: fixed;
+  right: 0;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+nav a {
+  color: black;
+  font-weight: 700;
+}
+nav button {
+  margin: 0.2em 0;
+}
+nav ul ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0.5em;
+  margin-top: 1em;
+}
+nav ul ul .btn {
+  font-size: 0.8rem;
+}
+nav > div {
+  position: absolute;
+  right: 0;
+  width: 85vw;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #d3d3d373;
+}
+
+@media screen and (min-width: 1000px) {
+  nav {
+    background-color: lightgray;
+    width: auto;
+    position: static;
+    margin: 0;
+  }
+  nav ul ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20em;
+  }
+  nav ul ul .btn {
+    font-size: 1rem;
+  }
+  nav ul ul li:nth-child(odd) {
+    width: 50%;
+  }
+  nav ul ul li:nth-child(even) {
+    width: 50%;
+  }
+}
+
 /*# sourceMappingURL=react.css.map */

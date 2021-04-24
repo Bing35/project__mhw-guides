@@ -1,0 +1,26 @@
+{
+  "name": "project__mhw-mechanics",
+  "version": "1.0.0",
+  "description": "Monster Hunter World website that shows guides for every monster. These guides detail the important monster information and players can add to them by explaining their moves and how to fight against them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel mechanics/static/mechanics/jsx -d mechanics/static/mechanics"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-launchers/project__mhw-mechanics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dev-launchers/project__mhw-mechanics/issues"
+  },
+  "homepage": "https://github.com/dev-launchers/project__mhw-mechanics#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "@babel/preset-react": "^7.13.13"
+  }
+}
