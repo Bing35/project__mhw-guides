@@ -1,5 +1,5 @@
 // fonts
-$navWeight: 700;
+$navWeight: 500;
 $navFontSize: 1.2rem;
 $defaultFontSize: 1.2rem;
 
@@ -23,9 +23,17 @@ $superLightGray: #d3d3d373;
 nav {
     font-size: $navFontSize;
     position: fixed;
-    right: 0;
-    margin-top: 1em;
-    margin-right: 1em;
+    right: 1em;
+    top: 2em;
+
+    span {
+        background-color: rgb(32, 35, 42);
+        color: white;
+        border-radius: 2em;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: rgb(0 0 0 / 30%) 0px 0px 20px;
+        padding: 0.6em 0.5em;
+    }
 
     a {
         color: black;
@@ -48,11 +56,16 @@ nav {
     }
 
     &>div {
-        position: absolute;
-        right: 0;
-        width: 85vw;
-        height: 80vh;
+        position: fixed;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        padding-top: 1.5em;
         overflow-y: scroll;
+
+        background-color: white;
     }
 
 }
@@ -66,13 +79,20 @@ table {
 }
 
 
+
+
+
 // media queries
 @media screen and (min-width: 1000px) {
     nav {
-        background-color: lightgray;
-        width: auto;
-        position: static;
-        margin: 0;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: .3em 0;
+
+        background-color: #20232a;
+        color: white;
 
         ul ul {
             display: flex;
@@ -92,6 +112,18 @@ table {
             }
         }
 
+        input {
+            background-color: transparent;
+            color: white;
+            border: .1em solid #bbbbbb;
+        }
 
+        a {
+            color: white;
+        }
+    }
+
+    main {
+        padding-top: 4em;
     }
 }

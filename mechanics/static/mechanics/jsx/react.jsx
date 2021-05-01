@@ -15,8 +15,10 @@ function App(props) {
                     <header>
                         <Nav setMonsterId={setMonsterId} />
                     </header>
-                    <Title name={monster.name} />
-                    <Stats monster={monster} />
+                    <main>
+                        <Title name={monster.name} />
+                        <Stats monster={monster} />
+                    </main>
                 </div>
 
             )
@@ -55,7 +57,7 @@ function Nav(props) {
         else if (viewport === 'sm') {
             return (
                 <nav>
-                    <button onClick={showNav} className='btn btn-secondary'>Menu</button>
+                    <span onClick={showNav}>Menu</span>
                     <div>
                         <ul className='nav flex-column'>
                             <li className='nav-item'><a className='nav-link'><Search
@@ -136,7 +138,7 @@ function Search(props) {
 
         return (
             <div>
-                <input type="text" onChange={changeSearch} value={search} />
+                <input type="text" onChange={changeSearch} value={search} placeholder='Search' />
                 <ul id='monster-list'>
                     {monsterList}
                 </ul>
@@ -270,11 +272,9 @@ function showNav() {
     const style = document.querySelector('nav>div').style
     if (style.display !== 'none') {
         style.display = 'none'
-        style.backgroundColor = 'white'
     }
     else {
         style.display = 'block'
-        style.backgroundColor = 'lightgray'
     }
 }
 
