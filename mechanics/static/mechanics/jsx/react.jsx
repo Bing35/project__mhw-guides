@@ -3,7 +3,6 @@ const { useState, useEffect } = React
 function App(props) {
     const [monsterId, setMonsterId] = useState(36)
     const [monster, setMonster] = useState(undefined)
-    let list = []
 
     function render() {
         if (monster === undefined) {
@@ -135,7 +134,6 @@ function Search(props) {
     }]
 
     function render() {
-
         return (
             <div>
                 <input type="text" onChange={changeSearch} value={search} placeholder='Search' />
@@ -206,9 +204,13 @@ function Search(props) {
 }
 
 function Title(props) {
-    return (
-        <h2>{props.name}</h2>
-    )
+    function render() {
+        return (
+            <h2>{props.name}</h2>
+        )
+    }
+
+    return render()
 }
 
 function Stats(props) {
@@ -218,54 +220,58 @@ function Stats(props) {
         list.push('this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.')
     }
 
-    return (
-        <div id='stats' className='row'>
-            {/* parts dmg sever, blunt, range */}
-            <table>
-            </table>
+    function render() {
+        return (
+            <div id='stats' className='row'>
+                {/* parts dmg sever, blunt, range */}
+                <table>
+                </table>
 
-            {/* elemental parts dmg */}
-            <table>
+                {/* elemental parts dmg */}
+                <table>
 
-            </table>
+                </table>
 
-            {/* ailments it deals */}
-            <table className='col-lg-4'>
-                <thead>
-                    <tr><th>Ailments</th></tr>
-                </thead>
-                <tbody>
-                    {props.monster.ailments.map((ailment) => (
-                        <tr key={ailment.name}><td>{ailment.name}</td></tr>
-                    ))}
-                </tbody>
-            </table>
+                {/* ailments it deals */}
+                <table className='col-lg-4'>
+                    <thead>
+                        <tr><th>Ailments</th></tr>
+                    </thead>
+                    <tbody>
+                        {props.monster.ailments.map((ailment) => (
+                            <tr key={ailment.name}><td>{ailment.name}</td></tr>
+                        ))}
+                    </tbody>
+                </table>
 
-            {/* locations */}
-            <table className='col-lg-4'>
-                <thead>
-                    <tr>
-                        <th>Location</th><th>Zone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {props.monster.locations.map(location => (
-                        <tr key={location.name}>
-                            <td>{location.name}</td><td>{location.zoneCount}</td>
+                {/* locations */}
+                <table className='col-lg-4'>
+                    <thead>
+                        <tr>
+                            <th>Location</th><th>Zone</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {props.monster.locations.map(location => (
+                            <tr key={location.name}>
+                                <td>{location.name}</td><td>{location.zoneCount}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
 
-            {/* spam text */}
-            {/* {list.map((p, index) => (
-                <p key={index}>
-                    {p}
-                </p>
-            ))} */}
+                {/* spam text */}
+                {/* {list.map((p, index) => (
+                    <p key={index}>
+                        {p}
+                    </p>
+                ))} */}
 
-        </div>
-    )
+            </div>
+        )
+    }
+
+    return render()
 }
 
 function showNav() {

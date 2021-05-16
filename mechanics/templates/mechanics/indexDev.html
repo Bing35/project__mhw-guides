@@ -13,9 +13,15 @@
 
 
 {% block body %}
-    <div id="root"></div>
+    <header>
+        <input type="text" id="monster-id" hidden>
+        <nav id="nav"></nav>
+    </header>
+    <main>
+        <section id="monster-stats"></section>
+    </main>
 
-    <script src="{% static 'mechanics/jsx/react.jsx' %}" type="text/babel"></script>
-    <!-- <script src="{% static 'mechanics/react.js' %}"></script> -->
+    <!-- <script src="{% static 'mechanics/jsx/react.jsx' %}" type="text/babel"></script> -->
+    <script src="{%  %}"></script>
     {% endblock body %}
 

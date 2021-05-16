@@ -1,26 +1,13 @@
-// fonts
-$navWeight: 500;
-$navFontSize: 1.2rem;
-$defaultFontSize: 1.2rem;
+$weight: 500;
+$fontSize: 1.2rem;
 
-
-
-// colors
-$superLightGray: #d3d3d373;
-
-
-
-#stats {
-    margin: 1em;
-}
-
-nav {
-    font-size: $navFontSize;
+nav>div {
+    font-size: $fontSize;
     position: fixed;
     right: 1em;
     top: 2em;
 
-    span {
+    #menu {
         background-color: rgb(32, 35, 42);
         color: white;
         border-radius: 2em;
@@ -31,7 +18,7 @@ nav {
 
     a {
         color: black;
-        font-weight: $navWeight;
+        font-weight: $weight;
     }
 
     button {
@@ -45,7 +32,7 @@ nav {
         margin-top: 1em;
 
         .btn {
-            font-size: $navFontSize - 0.4;
+            font-size: $fontSize - 0.4;
         }
     }
 
@@ -64,21 +51,14 @@ nav {
 
 }
 
-table {
-    tbody {
-        tr:nth-child(even) {
-            background-color: $superLightGray;
-        }
-    }
-}
-
-
-
-
 
 // media queries
 @media screen and (min-width: 1000px) {
-    nav {
+    header {
+        margin-bottom: 4em;
+    }
+
+    nav>div {
         width: 100%;
         position: fixed;
         top: 0;
@@ -115,9 +95,5 @@ table {
         a {
             color: white;
         }
-    }
-
-    main {
-        padding-top: 4em;
     }
 }
