@@ -20,12 +20,16 @@
 </head>
 <body>
     <header>
+        <nav id="nav"></nav>
+
         <input type="text" id="monster-url" hidden value="{% url 'monster' 1%}">
         <input type="text" id="about-url" hidden value="{% url 'about' %}">
-        <nav id="nav"></nav>
+        {% block header %}{% endblock header %}
     </header>
 
-    {% block body %}    {% endblock body %}
+    <main>{% block main %}    {% endblock main %}</main>
+
+    <footer>{% block footer %}{% endblock footer %}</footer>
     
 </body>
 </html>

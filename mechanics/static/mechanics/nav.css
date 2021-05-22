@@ -19,14 +19,17 @@ nav > div a {
 nav > div button {
   margin: 0.2em 0;
 }
-nav > div ul ul {
+nav > div .monster-list {
   list-style-type: none;
   padding-left: 0;
   margin-left: 0.5em;
   margin-top: 1em;
 }
-nav > div ul ul .btn {
+nav > div .monster-list .btn {
   font-size: 0.8rem;
+}
+nav > div .monster-list > li {
+  margin-bottom: 0.5em;
 }
 nav > div > div {
   position: fixed;
@@ -39,10 +42,17 @@ nav > div > div {
   overflow-y: scroll;
   background-color: white;
 }
+nav > div > div > ul {
+  display: flex;
+  flex-direction: column;
+}
+nav > div > div > ul > li:last-child {
+  margin-top: 0.5em;
+}
 
 @media screen and (min-width: 1000px) {
   header {
-    margin-bottom: 4em;
+    margin-bottom: 5em;
   }
 
   nav > div {
@@ -54,19 +64,33 @@ nav > div > div {
     background-color: #20232a;
     color: white;
   }
-  nav > div ul ul {
+  nav > div > ul {
+    display: flex;
+    justify-content: center;
+  }
+  nav > div > ul > li {
+    margin-right: 1em;
+    margin-left: 1em;
+  }
+  nav > div .monster-list {
     display: flex;
     flex-wrap: wrap;
+    position: absolute;
     width: 20em;
+    margin-top: 0.2em;
+    margin-left: 0;
+    padding-top: 1em;
+    background-color: #20232a;
   }
-  nav > div ul ul .btn {
+  nav > div .monster-list .btn {
     font-size: 1rem;
   }
-  nav > div ul ul li:nth-child(odd) {
-    width: 50%;
-  }
-  nav > div ul ul li:nth-child(even) {
-    width: 50%;
+  nav > div .monster-list li {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
   }
   nav > div input {
     background-color: transparent;

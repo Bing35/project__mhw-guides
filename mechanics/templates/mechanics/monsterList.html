@@ -1,0 +1,22 @@
+{% extends 'mechanics/layoutDev.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'mechanics/monsterStats.css' %}">
+
+    <script src="{% static 'mechanics/jsx/monsterStats.jsx' %}" type="text/babel"></script>
+{% endblock head %}
+
+{% block header %}
+    <input type="text" id="monster-id" hidden value="{{ monsterId }}" >
+{% endblock header %}
+
+{% block main %}
+    <article id="monster-stats"></article>
+{% endblock main %}
+
+{% block footer %}
+    <section>
+        <samp>The MHW monster data was provided by mhw-db.com</samp>
+    </section>
+{% endblock footer %}

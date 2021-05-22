@@ -1,0 +1,70 @@
+// colors
+$superLightGray: #d3d3d373;
+
+// fonts
+$fontSize: 1.2rem;
+
+footer {
+    margin-top: .5em;
+
+    section {
+        display: flex;
+        justify-content: center;
+
+        samp {
+            color: black;
+            font-size: .7rem;
+        }
+    }
+}
+
+#monster-stats {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+
+    h2 {
+        margin-bottom: 2em;
+    }
+
+    #stats {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    table {
+        margin-bottom: 1em;
+
+        tbody {
+            tr:nth-child(even) {
+                background-color: $superLightGray;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width:1000px) {
+    #monster-stats {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+
+        $fontSize: 1.2rem;
+
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
+
+    footer {
+        margin-top: .5em;
+
+        section {
+            samp {
+                font-size: .8rem;
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@ const { useState, useEffect } = React
 
 function MonsterStats(props) {
     const [monster, setMonster] = useState(undefined)
-    const [monsterId, setMonsterId] = useState(36)
+    const monsterId = parseInt(document.querySelector('#monster-id').value)
 
 
     function render() {
@@ -19,13 +19,6 @@ function MonsterStats(props) {
         }
 
     }
-
-    // add event listener to #monster-id 
-    useEffect(function () {
-        document.querySelector('#monster-id').oninput = function () {
-            setMonsterId(this.value)
-        }
-    }, [])
 
     // fetch data for monster
     useEffect(function () {
@@ -58,20 +51,20 @@ function Title(props) {
 
 function Stats(props) {
     // generate spam text
-    const list = []
-    for (let i = 0; i < 50; i++) {
-        list.push('this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.')
-    }
+    // const list = []
+    // for (let i = 0; i < 50; i++) {
+    //     list.push('this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.this is some text.')
+    // }
 
     function render() {
         return (
             <div id='stats' className='row'>
                 {/* parts dmg sever, blunt, range */}
-                <table>
+                <table hidden>
                 </table>
 
                 {/* elemental parts dmg */}
-                <table>
+                <table hidden>
 
                 </table>
 
@@ -117,14 +110,4 @@ function Stats(props) {
     return render()
 }
 
-function showNav() {
-    const style = document.querySelector('nav>div').style
-    if (style.display !== 'none') {
-        style.display = 'none'
-    }
-    else {
-        style.display = 'block'
-    }
-}
-
-ReactDom.render(<MonsterStats />, document.querySelector('#monster-stats'))
+ReactDOM.render(<MonsterStats />, document.querySelector('#monster-stats'))

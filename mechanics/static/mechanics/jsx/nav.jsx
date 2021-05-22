@@ -7,11 +7,11 @@ function Nav(props) {
         if (viewport === 'sm') {
             return (
                 <div>
-                    <span id='menu' onClick={showNav}>Menu</span>
+                    <span id='menu' onClick={toggleNav}>Menu</span>
                     <div>
-                        <ul className='nav flex-column'>
+                        <ul className='nav'>
                             <li className='nav-item'><span className='nav-link'><Search
-                                showNav={showNav}
+                                toggleNav={toggleNav}
                                 viewport={viewport}
                             /></span></li>
                             <li className="nav-item"><a className='nav-link' href={document.querySelector('#about-url').value}>About Us</a></li>
@@ -25,7 +25,7 @@ function Nav(props) {
                 <div>
                     <ul className='nav'>
                         <li className='nav-item'><span className='nav-link'><Search
-                            showNav={() => null}
+                            toggleNav={() => null}
                             viewport={viewport}
                         /></span></li>
                         <li className="nav-item"><a className='nav-link' href={document.querySelector('#about-url').value}>About Us</a></li>
@@ -39,9 +39,8 @@ function Nav(props) {
     // to change 
     // initialize display
     useEffect(function () {
-        const navDiv = document.querySelector('div>div')
-        if (navDiv !== null) {
-            document.querySelector('div>div').style.display = 'none';
+        if (viewport === 'sm') {
+            document.querySelector('nav>div>div').style.display = 'none';
         }
     }, [viewport])
 
@@ -84,7 +83,7 @@ function Search(props) {
         return (
             <div>
                 <input type="text" onChange={changeSearch} value={search} placeholder='Search' />
-                <ul id='monster-list'>
+                <ul id='monster-list' className='monster-list'>
                     {monsterList}
                 </ul>
             </div>
@@ -94,13 +93,11 @@ function Search(props) {
     // fetch data for monsters
     useEffect(function () {
         if (search === '') {
-            // clear ajax problem
-            const interval = setTimeout(() => {
-                setMonsters(undefined)
-            }, 500)
-            return () => clearTimeout(interval)
+            setMonsters(undefined)
+            return
         }
-        fetch(`https://mhw-db.com/monsters?q={"name": {"$like": "%${search}%"}}`)
+        let controller = new AbortController()
+        fetch(`https://mhw-db.com/monsters?q={"name": {"$like": "%${search}%"}}`, { signal: controller.signal })
             .then(response => response.json())
             .then(response => {
                 // verify if it is list
@@ -112,7 +109,8 @@ function Search(props) {
 
                 setMonsters(response)
             })
-        return
+            .catch(e => null)
+        return () => controller.abort()
 
     }, [search])
 
@@ -146,8 +144,8 @@ function Search(props) {
     return render()
 }
 
-function showNav() {
-    const style = document.querySelector('div>div').style
+function toggleNav() {
+    const style = document.querySelector('nav>div>div').style
     if (style.display !== 'none') {
         style.display = 'none'
     }

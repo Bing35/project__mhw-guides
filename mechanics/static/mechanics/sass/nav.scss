@@ -1,6 +1,9 @@
 $weight: 500;
 $fontSize: 1.2rem;
 
+$backgroundColor: rgb(32, 35, 42);
+$textColor: white;
+
 nav>div {
     font-size: $fontSize;
     position: fixed;
@@ -8,8 +11,8 @@ nav>div {
     top: 2em;
 
     #menu {
-        background-color: rgb(32, 35, 42);
-        color: white;
+        background-color: $backgroundColor;
+        color: $textColor;
         border-radius: 2em;
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: rgb(0 0 0 / 30%) 0px 0px 20px;
@@ -25,7 +28,7 @@ nav>div {
         margin: .2em 0;
     }
 
-    ul ul {
+    .monster-list {
         list-style-type: none;
         padding-left: 0;
         margin-left: .5em;
@@ -33,6 +36,10 @@ nav>div {
 
         .btn {
             font-size: $fontSize - 0.4;
+        }
+
+        &>li {
+            margin-bottom: .5em;
         }
     }
 
@@ -47,6 +54,15 @@ nav>div {
         overflow-y: scroll;
 
         background-color: white;
+
+        &>ul {
+            display: flex;
+            flex-direction: column;
+
+            &>li:last-child {
+                margin-top: .5em;
+            }
+        }
     }
 
 }
@@ -55,9 +71,10 @@ nav>div {
 // media queries
 @media screen and (min-width: 1000px) {
     header {
-        margin-bottom: 4em;
+        margin-bottom: 5em;
     }
 
+    // navigation bar
     nav>div {
         width: 100%;
         position: fixed;
@@ -66,34 +83,51 @@ nav>div {
         padding: .3em 0;
 
         background-color: #20232a;
-        color: white;
+        color: $textColor;
 
-        ul ul {
+        &>ul {
+            display: flex;
+            justify-content: center;
+
+            &>li {
+                margin-right: 1em;
+                margin-left: 1em;
+            }
+        }
+
+        .monster-list {
             display: flex;
             flex-wrap: wrap;
+            position: absolute;
+
             width: 20em;
+            margin-top: .2em;
+            margin-left: 0;
+            padding-top: 1em;
+
+            background-color: $backgroundColor;
 
             .btn {
                 font-size: 1rem;
             }
 
-            li:nth-child(odd) {
-                width: 50%;
-            }
-
-            li:nth-child(even) {
-                width: 50%;
+            li {
+                display: flex;
+                justify-content: center;
+                margin-bottom: .5em;
+                margin-right: .5em;
+                margin-left: .5em;
             }
         }
 
         input {
             background-color: transparent;
-            color: white;
+            color: $textColor;
             border: .1em solid #bbbbbb;
         }
 
         a {
-            color: white;
+            color: $textColor;
         }
     }
 }

@@ -1,0 +1,51 @@
+footer {
+  margin-top: 0.5em;
+}
+footer section {
+  display: flex;
+  justify-content: center;
+}
+footer section samp {
+  color: black;
+  font-size: 0.7rem;
+}
+
+#monster-stats {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+#monster-stats h2 {
+  margin-bottom: 2em;
+}
+#monster-stats #stats {
+  margin-left: 0;
+  margin-right: 0;
+}
+#monster-stats table {
+  margin-bottom: 1em;
+}
+#monster-stats table tbody tr:nth-child(even) {
+  background-color: #d3d3d373;
+}
+
+@media screen and (min-width: 1000px) {
+  #monster-stats {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+  }
+  #monster-stats h2 {
+    margin-bottom: 1em;
+  }
+
+  footer {
+    margin-top: 0.5em;
+  }
+  footer section samp {
+    font-size: 0.8rem;
+  }
+}
+
+/*# sourceMappingURL=monsterStats.css.map */
