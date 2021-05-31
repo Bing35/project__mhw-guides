@@ -2,6 +2,13 @@
 {% load static %}
 
 {% block head %}
+<!-- Reggae One font -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet"> 
+<!-- CC font  -->
+<link rel="stylesheet" href="{% static 'mechanics/CC.css' %}">
+
+<link rel="stylesheet" href="{% static 'mechanics/about.css' %}">
 {% endblock head %}
 
 {% block title %}
@@ -9,7 +16,22 @@
 {% endblock title %}
 
 {% block main %}
-
-    <main>test about</main>
-
+<section>
+    <div>
+        <a href="https://devlaunchers.com">
+            <div>
+                <h3>Dev Launchers</h3>
+                <div>
+                    <h3>Dev Launchers</h3>
+                    <figure>
+                        <img src="https://devlaunchers.com/_next/static/images/logo-monogram-a80dee4a898c69e190dee66411b8ffef.png" alt="Dev Launchers Logo">
+                    </figure>
+                    <h3>Dev Launchers</h3>
+                </div>
+                <h3>Dev Launchers</h3>
+            </div>
+        </a>
+    </div>
+    <p>Dev Launchers mentored this project.</p>
+</section>
 {% endblock main %}
