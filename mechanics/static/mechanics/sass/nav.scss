@@ -54,6 +54,7 @@ nav>div {
         overflow-y: scroll;
 
         background-color: white;
+        font-weight: $weight;
 
         &>ul {
             display: flex;
@@ -84,6 +85,20 @@ nav>div {
 
         background-color: #20232a;
         color: $textColor;
+
+        #logo {
+            float: left;
+            margin-left: .5em;
+            margin-right: -3em;
+            display: flex;
+            align-items: center;
+
+            font-size: 1.7rem;
+
+            a {
+                text-decoration: none;
+            }
+        }
 
         &>ul {
             display: flex;

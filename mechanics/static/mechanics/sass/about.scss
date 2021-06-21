@@ -1,4 +1,12 @@
+p {
+    font-family: CC, monospace;
+}
+
 main>section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     &>div {
         display: flex;
         justify-content: center;
@@ -28,7 +36,7 @@ main {
     display: flex;
     justify-content: center;
 
-    font-family: CC, sans-serif;
+    margin-top: 5em;
 
     h3 {
         font-family: 'Reggae One', fantasy;
@@ -39,4 +47,12 @@ main {
         color: black;
         text-decoration: none;
     }
+}
+
+@media screen and (min-width:1000px) {
+    main {
+        margin-top: 0
+    }
+
+    ;
 }

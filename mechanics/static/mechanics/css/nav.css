@@ -41,6 +41,7 @@ nav > div > div {
   padding-top: 1.5em;
   overflow-y: scroll;
   background-color: white;
+  font-weight: 500;
 }
 nav > div > div > ul {
   display: flex;
@@ -63,6 +64,17 @@ nav > div > div > ul > li:last-child {
     padding: 0.3em 0;
     background-color: #20232a;
     color: white;
+  }
+  nav > div #logo {
+    float: left;
+    margin-left: 0.5em;
+    margin-right: -3em;
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem;
+  }
+  nav > div #logo a {
+    text-decoration: none;
   }
   nav > div > ul {
     display: flex;
