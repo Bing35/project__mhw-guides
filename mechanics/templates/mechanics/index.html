@@ -1,0 +1,28 @@
+{% extends 'mechanics/layoutDev.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'mechanics/css/index.css' %}">
+{% endblock head %}
+
+{% block title %}
+    MHW Guides
+{% endblock title %}
+
+{% block main %}
+    <div>
+
+        <div>
+            <div>
+                <h1>MHW Guides</h1>
+                <p>
+                    Welcome to MHW Guides. You can search for monsters on the top search bar.
+                    The website will return monster stats although it is still missing information.
+                </p>
+            </div>
+            <figure>
+                <img src="{% static 'mechanics/img/mhw_nergigante wallpaper cropped.jpg' %}" alt="Monster Hunter World Nergigante">
+            </figure>
+        </div>
+    </div>
+{% endblock main %}

@@ -1,3 +1,12 @@
+p {
+  font-family: CC, monospace;
+}
+
+main > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 main > section > div {
   display: flex;
   justify-content: center;
@@ -21,7 +30,7 @@ main > section > div > a > div > div figure img {
 main {
   display: flex;
   justify-content: center;
-  font-family: CC, sans-serif;
+  margin-top: 5em;
 }
 main h3 {
   font-family: "Reggae One", fantasy;
@@ -30,6 +39,12 @@ main a:link,
 main a:hover {
   color: black;
   text-decoration: none;
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    margin-top: 0;
+  }
 }
 
 /*# sourceMappingURL=about.css.map */

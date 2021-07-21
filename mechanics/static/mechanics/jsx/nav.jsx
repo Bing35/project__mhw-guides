@@ -10,6 +10,9 @@ function Nav(props) {
                     <span id='menu' onClick={toggleNav}>Menu</span>
                     <div>
                         <ul className='nav'>
+                            <li className='nav-item'>
+                                <a className='nav-link' href={document.querySelector('#index-url').value}>Home</a>
+                            </li>
                             <li className='nav-item'><span className='nav-link'><Search
                                 toggleNav={toggleNav}
                                 viewport={viewport}
@@ -23,6 +26,7 @@ function Nav(props) {
         else {
             return (
                 <div>
+                    <span id='logo'><a href={document.querySelector('#index-url').value}>MHWG</a></span>
                     <ul className='nav'>
                         <li className='nav-item'><span className='nav-link'><Search
                             toggleNav={() => null}
@@ -97,7 +101,7 @@ function Search(props) {
             return
         }
         let controller = new AbortController()
-        fetch(`https://mhw-db.com/monsters?q={"name": {"$like": "%${search}%"}}`, { signal: controller.signal })
+        fetch(`https://mhw-db.com/monsters?q={"name": {"$like": "%${encodeURI(search)}%"}}`, { signal: controller.signal })
             .then(response => response.json())
             .then(response => {
                 // verify if it is list

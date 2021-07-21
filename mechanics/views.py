@@ -4,9 +4,7 @@ from django.shortcuts import render, redirect
 
 
 def index(request):
-    return render(request, 'mechanics/monsterList.html', {
-        'monsterId': 1
-    })
+    return render(request, 'mechanics/index.html')
 
 
 def monster(request, monsterId):
