@@ -4,8 +4,6 @@ Monster Hunter World website in development that shows guides for every monster.
 ![mhw guides_home](https://user-images.githubusercontent.com/69435914/126425340-93e18418-7695-4d20-a612-8be38aba0b3d.jpg)
 
 
-If you, programmer or not, are interested in contributing to this project, you are welcome to open an issue.
-
 
 ## How to run the website
 
