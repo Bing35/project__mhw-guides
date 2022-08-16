@@ -5,6 +5,11 @@ main {
     justify-content: center;
     margin-right: 2em;
     margin-left: 2em;
+	
+	>div>div{
+		display: grid;
+        grid-template-columns: 1fr;
+	}
 
     h1 {
         margin-top: 1em;
@@ -28,7 +33,7 @@ main {
 }
 
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:600px) {
     main {
         h1 {
             font-size: 3rem;
@@ -38,7 +43,7 @@ main {
             max-width: 1200px;
 
             &>div {
-                display: flex;
+                grid-template-columns: 1fr 1fr;
 
                 p {
                     font-size: $pFontSize*1.2;
@@ -47,10 +52,8 @@ main {
 
                 figure {
                     margin-top: 2em;
-                    margin-right: -10em;
 
                     img {
-                        width: 800px;
                         border-radius: 40%;
                     }
                 }

@@ -21,7 +21,10 @@
                 </p>
             </div>
             <figure>
-                <img src="{% static 'mechanics/img/mhw_nergigante wallpaper cropped.jpg' %}" alt="Monster Hunter World Nergigante">
+                <picture>
+                    <source media="(min-width: 600px)" srcset="{% static 'mechanics/img/mhw_nergigante wallpaper cropped.jpg' %}">
+                    <img src="{% static 'mechanics/img/mhw_nergigante wallpaper cropped-mobile.webp' %}" alt="Monster Hunter World Nergigante">
+                </picture>
             </figure>
         </div>
     </div>

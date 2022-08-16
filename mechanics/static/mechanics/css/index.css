@@ -4,6 +4,10 @@ main {
   margin-right: 2em;
   margin-left: 2em;
 }
+main > div > div {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 main h1 {
   margin-top: 1em;
   margin-bottom: 0.6em;
@@ -19,7 +23,7 @@ main img {
   border-radius: 50%;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 600px) {
   main h1 {
     font-size: 3rem;
   }
@@ -27,7 +31,7 @@ main img {
     max-width: 1200px;
   }
   main > div > div {
-    display: flex;
+    grid-template-columns: 1fr 1fr;
   }
   main > div > div p {
     font-size: 1.56rem;
@@ -35,10 +39,8 @@ main img {
   }
   main > div > div figure {
     margin-top: 2em;
-    margin-right: -10em;
   }
   main > div > div figure img {
-    width: 800px;
     border-radius: 40%;
   }
 }
