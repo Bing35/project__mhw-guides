@@ -56,14 +56,14 @@ function Nav(props) {
 
 
     function changeViewport() {
-        if (window.innerWidth < 1000) {
-            console.log(`changeviewport sm: ${viewport}`);
+        if (window.innerWidth < 600) {
+            //console.log(`changeviewport sm: ${viewport}`);
             if (viewport !== 'sm') {
                 setViewport('sm')
             }
         }
         else {
-            console.log(`changeviewport lg: ${viewport}`);
+            //console.log(`changeviewport lg: ${viewport}`);
             if (viewport !== 'lg') {
                 setViewport('lg')
             }
@@ -122,11 +122,11 @@ function Search(props) {
     useEffect(function () {
         if (monsters === undefined) {
             setMonsterList([])
-            console.log('monster undefined');
+            //console.log('monster undefined');
             document.querySelector('#monster-list').style.display = 'none'
         }
         else {
-            console.log('monster = monsterlist');
+            //console.log('monster = monsterlist');
             setMonsterList(monsters.map(item => (
                 <li key={item.name} ><a href={`${monsterUrl}${item.id}`}>
                     <button data-id={item.id} className='btn btn-light'>{item.name}</button>
